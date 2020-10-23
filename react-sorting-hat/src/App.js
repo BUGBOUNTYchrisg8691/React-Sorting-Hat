@@ -1,24 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Questions from "./components/Questions"
+
+// What house do you not want to be placed in?
+// What house do you want to be place in?
+// What Trait do you most associate yourself with?
+// What's your favorite color combo?
+// How smart do you think you are?
+// Which of these is your favorite animal?
+
 function App() {
+  const [house, setHouse] = useState(null)
+
+  const decideHouse = (answers) => {
+    let house
+    console.log(answers)
+    const total = answers.reduce((count, next) => {
+      return count + Number(next)
+    }, 0) 
+    console.log(total)
+    const avg = total / 6
+    console.log(avg)
+    switch ([0, 10, 20, 30].reduce((a, b) => {
+      return Math.abs(b - avg) < Math.abs(a - avg) ? b : a
+    })) {
+      case 10:
+        house = "Gryffindor"
+        break
+      case 20:
+        house = "Hufflepuff"
+        break
+      case 30:
+        house = "Ravenclaw"
+        break
+      case 40:
+        house = "Slytherin"
+        break
+    }
+    setHouse(house)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Questions decideHouse={ decideHouse } />
+      { house && <div>You been place in {house}</div>}
     </div>
   );
 }
