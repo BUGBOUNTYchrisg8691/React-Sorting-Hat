@@ -11,19 +11,22 @@ export default class Questions extends Component {
   constructor() { 
     super()
     this.state = {
-      answers: []
+      answers: {}
     }
   }
   
   onChange = e => {
-    const { value } = e.target
-    this.setState({ answers: [...this.state.answers, value] })
+    const { name, value } = e.target
+    this.setState({ answers: {
+      ...this.state.answers,
+      [name]: value
+    }})
   }
 
   handleDecideHouse = e => {
     e.preventDefault()
-    // this.props.decideHouse(Object.values(this.state.anwsers))
-    this.props.decideHouse(this.state.answers)
+    console.log(this.state.answers)
+    this.props.decideHouse(Object.values(this.state.answers))
   }
 
   render() {
