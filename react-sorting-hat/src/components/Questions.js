@@ -25,8 +25,8 @@ export default class Questions extends Component {
 
   handleDecideHouse = e => {
     e.preventDefault()
-    console.log(this.state.answers)
-    this.props.decideHouse(Object.values(this.state.answers))
+    console.log(Object.values(this.state.answers).slice(0, 6))
+    this.props.decideHouse(Object.values(this.state.answers).slice(0, 6))
   }
 
   render() {

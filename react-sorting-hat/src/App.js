@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { descriptions } from "./components/descriptions"
+
 import Questions from "./components/Questions"
 
 // What house do you not want to be placed in?
@@ -26,16 +28,16 @@ function App() {
     switch ([0, 10, 20, 30].reduce((a, b) => {
       return Math.abs(b - avg) < Math.abs(a - avg) ? b : a
     })) {
-      case 10:
+      case 0:
         house = "Gryffindor"
         break
-      case 20:
+      case 10:
         house = "Hufflepuff"
         break
-      case 30:
+      case 20:
         house = "Ravenclaw"
         break
-      case 40:
+      case 30:
         house = "Slytherin"
         break
     }
@@ -45,7 +47,14 @@ function App() {
   return (
     <div className="App">
       <Questions decideHouse={ decideHouse } />
-      { house && <div>You been place in {house}</div>}
+      { house && 
+        <>
+          <div>You been place in {house}</div>
+          <div>{ descriptions["The Four Houses of Hogwarts"][house] }</div>
+        </>
+      }
+
+      {/* <div>{JSON.stringify(descriptions)}</div> */}
     </div>
   );
 }
