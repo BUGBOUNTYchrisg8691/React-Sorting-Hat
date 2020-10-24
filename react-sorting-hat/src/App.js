@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { descriptions } from "./components/descriptions"
+import { descriptions } from "./assets/descriptions"
 
 import Questions from "./components/Questions"
 
@@ -46,11 +46,15 @@ function App() {
 
   return (
     <div className="App">
+      <div className="app-header">
+        <h1>Hogwarts Sorting Hat</h1>
+      </div>
       <Questions decideHouse={ decideHouse } />
       { house && 
         <>
-          <div>You been place in {house}</div>
-          <div>{ descriptions["The Four Houses of Hogwarts"][house] }</div>
+          <div className="app-placement">You been place in {house}</div>
+          <div className="app-description-header">A bit about your house</div>
+          <div className="app-description">{ descriptions["The Four Houses of Hogwarts"][house] }</div>
         </>
       }
 

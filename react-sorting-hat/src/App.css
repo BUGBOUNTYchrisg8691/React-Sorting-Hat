@@ -1,38 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 99.9%;
+}
+
+.app-header {
+  border: 5px solid goldenrod;
+  box-shadow: 1px 1px goldenrod;
+  width: 60%;
+  text-align: center;
+  background-image: url("https://vignette.wikia.nocookie.net/harrypotter/images/b/bd/Hogwarts_dementor.png/revision/latest?cb=20111027193316");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px;
+  outline: 3px solid black;
+  outline-style: groove;
+}
+
+.app-header h1 {
+  color: whitesmoke;
+  text-shadow: 2px 2px black;
+}
+
+.questions-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 4px;
+}
+
+.questions-form:after {
+  content: '<>';
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
+  
+  top: 18px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+  /*left line */
+  
+  position: absolute;
+  pointer-events: none;
+}
+
+.questions-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  float: right;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+/* .questions-form-select {
+  margin: 10px;
+  outline: 3px solid black;
+  border: 5px solid goldenrod;
+} */
+
+.questions-form-button {
+	box-shadow: 0px 10px 14px -7px #e39c0d;
+	border:1px solid #f5c400;
+	display:inline-block;
+	cursor:pointer;
+	color:#4e5059;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px black;
+  padding: 3px 5px;
+  align-items: center;
+  border-radius: 3px;
+  background-color:goldenrod;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.questions-form-button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px;
+}
+
+.questions-form-button:active {
+	position:relative;
+	top:1px;
+}
+
+.questions-form-center-button {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.app-placement {
+	border:1px solid #f5c400;
+  background-color: goldenrod;
+  box-shadow: 3px 3px lightgoldenrodyellow;
+  padding: 4px 5px;
+  margin: 10px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px black;
+	color:#4e5059;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-description {
+	border:1px solid #f5c400;
+  background-color: goldenrod;
+  box-shadow: 3px 3px lightgoldenrodyellow;
+  padding: 4px 5px;
+  margin: 10px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px black;
+	color:#4e5059;
+}
+
+.app-description-header {
+  font-size: 1.5rem;
+  text-decoration: underline;
 }

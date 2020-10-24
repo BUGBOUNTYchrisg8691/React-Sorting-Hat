@@ -31,9 +31,10 @@ export default class Questions extends Component {
 
   render() {
     return (
-      <form onSubmit={ this.handleDecideHouse }>
+      <form className="questions-form" onSubmit={ this.handleDecideHouse }>
         What house do you not want to be placed in?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question1"
           value={ this.state.answers.question1 }
@@ -46,6 +47,7 @@ export default class Questions extends Component {
         </select>
         What house do you want to be place in?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question2"
           value={ this.state.answers.question2 }
@@ -58,6 +60,7 @@ export default class Questions extends Component {
         </select>
         What Trait do you most associate yourself with?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question3"
           value={ this.state.answers.question3 }
@@ -70,6 +73,7 @@ export default class Questions extends Component {
         </select>
         What's your favorite color combo?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question4"
           value={ this.state.answers.question4 }
@@ -82,6 +86,7 @@ export default class Questions extends Component {
         </select>
         In which field do you feel you are most intelligent?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question5"
           value={ this.state.answers.question5 }
@@ -94,6 +99,7 @@ export default class Questions extends Component {
         </select>
         Which of these is your favorite animal?
         <select
+          className="questions-form-select"
           onChange={ this.onChange }
           name="question6"
           value={ this.state.answers.question6 }
@@ -104,7 +110,7 @@ export default class Questions extends Component {
           <option value={30}>Eagle</option>
           <option value={40}>Snake</option>
         </select>
-        <button>Place Sorting Hat on Head</button>
+        <button className="questions-form-button">Place Sorting Hat on Head</button>
       </form>
     )
   }
